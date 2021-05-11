@@ -1,7 +1,19 @@
 import sys
+import random
 
-number_of_tries = 5
-word = "mariusz"
+
+print("Hello! Enter yours number of tries (max 5): ")
+number_of_tries =int(input())
+
+ 
+while number_of_tries>5 or number_of_tries<=0:
+    print("You can have only max 5 tries, enter again: ")
+    number_of_tries = int(input())
+    
+
+word = ["amazing", "colorful", "own", "angry", "serious", "rifle", "overwatch", "image"]
+word = random.choice(word)
+
 used_letters = []
 
 user_word = []
@@ -47,7 +59,7 @@ while True:
         
 
         if "".join(user_word) == word:
-            print("Congratulations, it is this word!")
+            print("Congratulations,",word,"is this word!")
             sys.exit(0)
 
 
